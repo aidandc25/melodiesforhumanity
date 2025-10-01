@@ -1,12 +1,56 @@
-body {
-    font-family: 'Arial', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --bg-primary: #09090b;
+    --bg-secondary: #18181b;
+    --bg-tertiary: #27272a;
+    --bg-card: #18181b;
+    --bg-card-hover: #1f1f23;
+    --text-primary: #fafafa;
+    --text-secondary: #a1a1aa;
+    --text-tertiary: #71717a;
+    --border-primary: #27272a;
+    --border-secondary: #3f3f46;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #6366f1;
+    --accent-hover: #2563eb;
+}
+
+body.light-mode {
+    --bg-primary: #d4d2d0;
+    --bg-secondary: #e5e3e1;
+    --bg-tertiary: #c5c2bf;
+    --bg-card: #eae8e6;
+    --bg-card-hover: #ddd9d6;
+    --text-primary: #1a1816;
+    --text-secondary: #3d3935;
+    --text-tertiary: #52504d;
+    --border-primary: #b8b5b1;
+    --border-secondary: #9e9a96;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #6366f1;
+    --accent-hover: #2563eb;
+}
+
+* {
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 #content {
@@ -15,93 +59,229 @@ body {
 }
 
 header {
-    background-color: #2c3e50; /* Navy blue */
-    color: white;
-    padding: 10px 0;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 1.5rem 2rem;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    border-bottom: 1px solid var(--border-primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+body.light-mode header {
+    background-color: rgba(229, 227, 225, 0.9);
+}
+
+body:not(.light-mode) header {
+    background-color: rgba(24, 24, 27, 0.85);
+}
+
+.header-top {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.5rem;
+}
+
+.theme-toggle {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-primary);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-secondary);
 }
 
 header .logo {
-    max-width: 100px;
-    margin-bottom: 10px;
+    max-width: 80px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    filter: brightness(1.1);
+}
+
+body.light-mode header .logo {
+    filter: invert(1) brightness(0.9);
+    background: transparent;
+    padding: 0;
+}
+
+header .logo:hover {
+    transform: scale(1.05);
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
+    margin: 0 0 1.5rem 0;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-secondary);
     text-decoration: none;
+    padding: 0.625rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    transition: all 0.2s ease;
+    display: inline-block;
+}
+
+nav ul li a:hover {
+    color: var(--accent-primary);
+    background-color: var(--bg-tertiary);
 }
 
 main {
-    padding: 20px;
-    text-align: left; /* Ensuring left alignment for main content */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    text-align: left;
 }
 
 .intro, .contact, .founder, .schools, .start {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-card);
+    padding: 2.5rem;
+    margin: 2rem 0;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-primary);
+    transition: all 0.3s ease;
+}
+
+.intro:hover, .contact:hover, .founder:hover, .schools:hover, .start:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    border-color: var(--border-secondary);
+}
+
+.intro h2, .contact h2, .founder h2, .schools h2, .start h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.intro p, .contact p, .founder p, .schools p, .start p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
 }
 
 .cta {
     text-align: center;
-    margin: 20px 0;
+    margin: 3rem 0;
+}
+
+.cta h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.cta p {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
 }
 
 .cta .button {
-    background-color: #2980b9; /* Light navy blue */
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
     color: white;
-    padding: 10px 20px;
+    padding: 0.875rem 2rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    font-size: 1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
 }
 
 .cta .button:hover {
-    background-color: #1f618d; /* Darker navy blue */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
 }
 
 footer {
     text-align: center;
-    padding: 10px 0;
-    background-color: #2c3e50; /* Navy blue */
-    color: white;
+    padding: 2rem 1.5rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-secondary);
     width: 100%;
+    margin-top: auto;
+    border-top: 1px solid var(--border-primary);
+}
+
+footer p {
+    font-size: 0.9375rem;
+    margin: 0;
 }
 
 .school-card {
     display: flex;
     align-items: center;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    margin: 10px 0;
+    background-color: var(--bg-tertiary);
+    border-radius: 0.875rem;
+    border: 1px solid var(--border-primary);
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.school-card:hover {
+    background-color: var(--bg-card-hover);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    transform: translateX(4px);
+    border-color: var(--border-secondary);
 }
 
 .school-logo {
     max-width: 80px;
-    margin-right: 20px;
-    flex-shrink: 0; /* Prevent shrinking */
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    background: white;
+    padding: 0.5rem;
 }
 
 .school-info {
@@ -109,216 +289,243 @@ footer {
 }
 
 .school-info h3 {
-    margin: 0;
-    font-size: 1.5em;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
 }
 
 .school-info p {
-    margin: 5px 0;
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
 }
 
-.start-page .options {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    margin-top: 20px;
+.school-info strong {
+    color: var(--accent-primary);
+    font-weight: 600;
 }
 
 .options {
-    display: flex;
-    justify-content: space-around;
-    align-items: stretch;
-    margin-top: 20px;
-}
-
-.start-page {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    flex: 1;
-    margin: 10px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
 .option {
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    flex: 1;
-    margin: 10px;
+    background: var(--bg-tertiary);
+    border-radius: 1rem;
+    border: 1px solid var(--border-primary);
+    padding: 2rem;
     text-align: center;
+    transition: all 0.3s ease;
 }
 
-.start-page .option h3 {
-    margin-top: 0;
-    font-size: 1.5em;
+.option:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent-primary);
+    background: var(--bg-card-hover);
 }
 
 .option h3 {
-    margin-top: 0;
-    font-size: 1.5em;
-}
-
-.start-page .option p {
-    font-size: 1em;
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
 }
 
 .option p {
-    font-size: 1em;
-}
-
-.start-page .action-button {
-    background-color: #2980b9; /* Light navy blue */
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    display: inline-block;
-    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
 }
 
 .action-button {
-    background-color: #2980b9; /* Light navy blue */
+    background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
     color: white;
-    padding: 10px 20px;
+    padding: 0.875rem 1.75rem;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 0.625rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
     display: inline-block;
-    margin-top: 10px;
-}
-
-.start-page .action-button:hover {
-    background-color: #1f618d; /* Darker navy blue */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(59, 130, 246, 0.2);
 }
 
 .action-button:hover {
-    background-color: #1f618d; /* Darker navy blue */
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
 }
 
 /* Additional Styles for Founder Page */
 .founder-content {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px; /* Adding space between items */
+    gap: 2rem;
 }
 
 .founder-image {
-    max-width: 200px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 240px;
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.founder-image:hover {
+    transform: scale(1.02);
 }
 
 .founder-text {
     flex: 1;
+    min-width: 300px;
+}
+
+/* Contact page link styling */
+.contact a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.contact a:hover {
+    color: var(--accent-secondary);
+    text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     header {
-        flex-direction: column;
-        padding: 5px 0;
+        padding: 1rem 1.5rem;
     }
-    
+
     header h1 {
-        font-size: 2em;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
     }
-    
+
     header .logo {
-        max-width: 80px;
-        margin-bottom: 5px;
+        max-width: 60px;
     }
-    
+
     nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        gap: 0.25rem;
     }
-    
-    nav ul li {
-        margin: 10px 0;
+
+    nav ul li a {
+        padding: 0.5rem 0.875rem;
+        font-size: 0.875rem;
     }
-    
+
+    main {
+        padding: 2rem 1rem;
+    }
+
     .intro, .contact, .founder, .schools, .start {
-        margin: 10px;
-        padding: 15px;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
     }
-    
-    .cta .button, .action-button {
-        width: 100%;
-        text-align: center;
+
+    .intro h2, .contact h2, .founder h2, .schools h2, .start h2 {
+        font-size: 1.5rem;
     }
-    
+
+    .intro p, .contact p, .founder p, .schools p, .start p {
+        font-size: 1rem;
+    }
+
     .school-card {
-        flex-direction: row; /* Ensure row direction */
-        align-items: flex-start;
-        text-align: left;
-        flex-wrap: nowrap; /* Prevent wrapping */
+        padding: 1.25rem;
     }
-    
+
     .school-logo {
-        margin: 0 20px 0 0;
-        max-width: 60px; /* Constrain image size on smaller screens */
+        max-width: 60px;
+        margin-right: 1rem;
+    }
+
+    .school-info h3 {
+        font-size: 1.125rem;
     }
 
     .founder-content {
         flex-direction: column;
         align-items: center;
-    }
-    
-    .founder-image {
-        max-width: 100%;
-    }
-    
-    .start-page .options, .options {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .option {
-        margin: 10px 0;
+        text-align: center;
     }
 
-    footer {
-        padding: 5px 0;
+    .founder-image {
+        max-width: 200px;
+    }
+
+    .founder-text {
+        text-align: left;
+    }
+
+    .options {
+        grid-template-columns: 1fr;
+    }
+
+    .option {
+        padding: 1.5rem;
+    }
+
+    .cta {
+        margin: 2rem 0;
     }
 }
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5em;
+        font-size: 1.25rem;
     }
-    
+
     .intro h2, .contact h2, .founder h2, .schools h2, .start h2 {
-        font-size: 1.5em;
+        font-size: 1.375rem;
     }
-    
+
+    .cta h2 {
+        font-size: 1.5rem;
+    }
+
+    .school-card {
+        padding: 1rem;
+    }
+
     .school-info h3 {
-        font-size: 1.2em;
+        font-size: 1rem;
     }
-    
+
     .school-info p {
-        font-size: 0.9em;
+        font-size: 0.875rem;
     }
-    
-    .cta .button, .action-button {
-        padding: 8px 10px;
-        font-size: 0.9em;
-        width: 90%;
-        max-width: 300px;
-    }
-    
-    .start-page .option h3, .option h3 {
-        font-size: 1.2em;
-    }
-    
-    .start-page .option p, .option p {
-        font-size: 0.9em;
+
+    .option h3 {
+        font-size: 1.25rem;
     }
 
     footer {
-        padding: 5px 0;
+        padding: 1.5rem 1rem;
     }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro, .cta, .school-card, .option {
+    animation: fadeIn 0.5s ease-out;
 }
