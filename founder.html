@@ -8,40 +8,164 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                <span id="theme-icon">🌙</span>
-            </button>
+    <header id="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="logo.png" alt="Melodies for Humanity Logo" class="logo-desktop">
+                <h1>Melodies for Humanity</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="./" class="nav-link">Home</a></li>
+                    <li><a href="./start" class="nav-link">Start a Chapter</a></li>
+                    <li><a href="./founder" class="nav-link">Founder</a></li>
+                    <li><a href="./schools" class="nav-link">Schools</a></li>
+                    <li><a href="./contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+            </div>
         </div>
-        <img src="logo.png" alt="Melodies for Humanity Logo" class="logo">
-        <h1>Melodies for Humanity</h1>
-        <nav>
-            <ul>
-                <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="./start" class="nav-link">Start a Chapter</a></li>
-                <li><a href="./founder" class="nav-link">Founder</a></li>
-                <li><a href="./schools" class="nav-link">Participating Schools</a></li>
-                <li><a href="./contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <h2>Menu</h2>
+                <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">
+                    <span class="close-icon">×</span>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <ul>
+                    <li><a href="./" class="nav-link mobile-nav-link">Home</a></li>
+                    <li><a href="./start" class="nav-link mobile-nav-link">Start a Chapter</a></li>
+                    <li><a href="./founder" class="nav-link mobile-nav-link">Founder</a></li>
+                    <li><a href="./schools" class="nav-link mobile-nav-link">Schools</a></li>
+                    <li><a href="./contact" class="nav-link mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <div id="content">
         <main>
+            <section class="founder-hero">
+                <h2 class="section-title">Meet the Founder</h2>
+                <p class="section-subtitle">A student musician on a mission to transform lives through the power of music</p>
+            </section>
+
             <section class="founder">
-                <h2>Meet the Founder</h2>
                 <div class="founder-content">
-                    <img src="aidan.jpg" alt="Aidan da Costa" class="founder-image">
+                    <div class="founder-image-container">
+                        <img src="aidan.jpg" alt="Aidan da Costa" class="founder-image">
+                        <div class="founder-badge">
+                            <span class="badge-title">Aidan da Costa</span>
+                            <span class="badge-subtitle">Founder & Executive Director</span>
+                        </div>
+                    </div>
                     <div class="founder-text">
-                        <p>Aidan da Costa is honored to be the founder of Melodies for Humanity. Music has been a significant part of his life for many years. As a drum major at Lone Star High School, Aidan has helped lead the band to historic achievements, including placing 6th in the UIL State Finals. He has been playing the flute for 7 years and is a proud member of the Lone Star Wind Symphony, which performed as the 2024 TMEA honor band. Additionally, he enjoys playing the tenor saxophone in the school's jazz band and performing guitar and vocals in a band.</p>
-                        <p>Beyond his involvement in various musical ensembles and as a soloist, Aidan is deeply passionate about using music to make a positive impact on others. He has volunteered in his church's music ministry for over six years as a flutist and singer, reinforcing his belief in music's power to serve and inspire communities. Through Melodies for Humanity, he aims to connect talented high school musicians with opportunities to perform for those who would be blessed by music, such as individuals in senior centers and hospitals. He believes in the transformative power of music and its ability to uplift and inspire, and strives to spread joy and comfort through these performances.</p>
+                        <div class="founder-quote-highlight">
+                            <p class="pull-quote">"Music has the power to heal, inspire, and bring people together across all boundaries. Through Melodies for Humanity, I want every student musician to experience the profound joy of using their talent to brighten someone's day."</p>
+                        </div>
+
+                        <h3 class="founder-section-heading">A Life Rooted in Music</h3>
+                        <p>Aidan da Costa is honored to be the founder of Melodies for Humanity. Music has been a significant part of his life for many years. As drum major at Lone Star High School, Aidan has helped lead the band to historic achievements, including placing 6th in the UIL State Finals. He has been playing the flute for 7 years and is a proud member of the Lone Star Wind Symphony, which performed as the 2024 TMEA honor band. Additionally, he enjoys playing the tenor saxophone in the school's jazz band and performing guitar and vocals in a band.</p>
+
+                        <div class="founder-achievements">
+                            <div class="achievement-item">
+                                <div class="achievement-icon">🎺</div>
+                                <div class="achievement-text">
+                                    <strong>Drum Major</strong>
+                                    <span>Lone Star High School</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-icon">🎼</div>
+                                <div class="achievement-text">
+                                    <strong>TMEA Honor Band</strong>
+                                    <span>Wind Symphony Member</span>
+                                </div>
+                            </div>
+                            <div class="achievement-item">
+                                <div class="achievement-icon">🎸</div>
+                                <div class="achievement-text">
+                                    <strong>Multi-Instrumentalist</strong>
+                                    <span>Flute, Sax, Guitar & Vocals</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="founder-section-heading">Music as Service</h3>
+                        <p>Beyond his involvement in various musical ensembles and as a soloist, Aidan is deeply passionate about using music to make a positive impact on others. He has volunteered in his church's music ministry for over six years as a flutist and singer, reinforcing his belief in music's power to serve and inspire communities.</p>
+
+                        <h3 class="founder-section-heading">The Vision Behind Melodies for Humanity</h3>
+                        <p>Through Melodies for Humanity, he aims to connect talented high school musicians with opportunities to perform for those who would be blessed by music, such as individuals in senior centers and hospitals. He believes in the transformative power of music and its ability to uplift and inspire, and strives to spread joy and comfort through these performances.</p>
+
+                        <div class="founder-mission-box">
+                            <h4>Why This Matters</h4>
+                            <p>Every performance is more than just music—it's a moment of connection, a reminder that someone cares, and proof that a single student can spark a movement of compassion that touches countless lives.</p>
+                        </div>
                     </div>
                 </div>
+            </section>
+
+            <section class="founder-cta">
+                <h3>Join Aidan's Vision</h3>
+                <p>Be part of a growing movement of student musicians making a real difference</p>
+                <a href="./start" class="button-primary nav-link">Start Your Chapter</a>
             </section>
         </main>
     </div>
     <footer>
-        <p>Melodies for Humanity</p>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Melodies for Humanity Logo" class="footer-logo">
+                    <h3>Melodies for Humanity</h3>
+                    <p class="footer-tagline">Bringing the healing power of music to those who need it most</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="./" class="nav-link">Home</a></li>
+                            <li><a href="./founder" class="nav-link">Our Founder</a></li>
+                            <li><a href="./schools" class="nav-link">Chapters</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Get Involved</h4>
+                        <ul>
+                            <li><a href="./start" class="nav-link">Start a Chapter</a></li>
+                            <li><a href="./start" class="nav-link">Become a Member</a></li>
+                            <li><a href="./contact" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="mailto:info@melodiesforhumanity.org">info@melodiesforhumanity.org</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Melodies for Humanity</p>
+                <p class="footer-mission">A student-led nonprofit organization</p>
+            </div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>

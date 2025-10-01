@@ -8,86 +8,179 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                <span id="theme-icon">🌙</span>
-            </button>
+    <header id="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="logo.png" alt="Melodies for Humanity Logo" class="logo-desktop">
+                <h1>Melodies for Humanity</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="./" class="nav-link">Home</a></li>
+                    <li><a href="./start" class="nav-link">Start a Chapter</a></li>
+                    <li><a href="./founder" class="nav-link">Founder</a></li>
+                    <li><a href="./schools" class="nav-link">Schools</a></li>
+                    <li><a href="./contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+            </div>
         </div>
-        <img src="logo.png" alt="Melodies for Humanity Logo" class="logo">
-        <h1>Melodies for Humanity</h1>
-        <nav>
-            <ul>
-                <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="./start" class="nav-link">Start a Chapter</a></li>
-                <li><a href="./founder" class="nav-link">Founder</a></li>
-                <li><a href="./schools" class="nav-link">Participating Schools</a></li>
-                <li><a href="./contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <h2>Menu</h2>
+                <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">
+                    <span class="close-icon">×</span>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <ul>
+                    <li><a href="./" class="nav-link mobile-nav-link">Home</a></li>
+                    <li><a href="./start" class="nav-link mobile-nav-link">Start a Chapter</a></li>
+                    <li><a href="./founder" class="nav-link mobile-nav-link">Founder</a></li>
+                    <li><a href="./schools" class="nav-link mobile-nav-link">Schools</a></li>
+                    <li><a href="./contact" class="nav-link mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <div id="content">
         <main>
+            <section class="schools-hero">
+                <h2 class="section-title">Our Growing Community</h2>
+                <p class="section-subtitle">Seven chapters strong and expanding across the country, each led by passionate student leaders dedicated to spreading joy through music</p>
+
+                <div class="chapter-count-display">
+                    <div class="count-circle">
+                        <span class="big-number" id="schools-chapter-count">7</span>
+                        <span class="count-label">Active Chapters</span>
+                    </div>
+                </div>
+            </section>
+
             <section class="schools">
-                <h2>Participating Schools</h2>
-                <p>Below are all the schools with a current chapter:</p>
+                <h3 class="schools-section-title">Chapter Leaders</h3>
 
+                <div class="schools-grid">
+                    <div class="school-card">
+                        <img src="lonestar.png" alt="Lone Star HS Logo" class="school-logo">
+                        <div class="school-info">
+                            <h3>Lone Star High School</h3>
+                            <p class="school-location">Frisco, Texas</p>
+                            <p class="school-president"><strong>Chapter President:</strong> Aidan da Costa</p>
+                        </div>
+                    </div>
+                    <div class="school-card">
+                        <img src="memorial.png" alt="Memorial HS Logo" class="school-logo">
+                        <div class="school-info">
+                            <h3>Memorial High School</h3>
+                            <p class="school-location">Frisco, Texas</p>
+                            <p class="school-president"><strong>Chapter President:</strong> Brianna Rausch</p>
+                        </div>
+                    </div>
+                    <div class="school-card">
+                        <img src="reedy.png" alt="Reedy HS Logo" class="school-logo">
+                        <div class="school-info">
+                            <h3>Reedy High School</h3>
+                            <p class="school-location">Frisco, Texas</p>
+                            <p class="school-president"><strong>Chapter President:</strong> Hayden Kim</p>
+                        </div>
+                    </div>
+                    <div class="school-card">
+                        <img src="pchs.png" alt="Panther Creek HS Logo" class="school-logo">
+                        <div class="school-info">
+                            <h3>Panther Creek High School</h3>
+                            <p class="school-location">Frisco, Texas</p>
+                            <p class="school-president"><strong>Chapter President:</strong> Carlos Castro</p>
+                        </div>
+                    </div>
+                    <div class="school-card">
+                        <img src="frisco.png" alt="Frisco HS Logo" class="school-logo">
+                        <div class="school-info">
+                            <h3>Frisco High School</h3>
+                            <p class="school-location">Frisco, Texas</p>
+                            <p class="school-president"><strong>Chapter President:</strong> Enze Wang</p>
+                        </div>
+                    </div>
+                    <div class="school-card">
+                        <img src="salado.png" alt="Salado HS Logo" class="school-logo">
+                        <div class="school-info">
+                            <h3>Salado High School</h3>
+                            <p class="school-location">Salado, Texas</p>
+                            <p class="school-president"><strong>Chapter President:</strong> Valente Hernandez</p>
+                        </div>
+                    </div>
+                    <div class="school-card">
+                        <img src="westlake.png" alt="Westlake HS Logo" class="school-logo">
+                        <div class="school-info">
+                            <h3>Westlake High School</h3>
+                            <p class="school-location">Austin, Texas</p>
+                            <p class="school-president"><strong>Chapter President:</strong> Vidhur Seshadri</p>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="school-card">
-                    <img src="lonestar.png" alt="Lone Star HS Logo" class="school-logo">
-                    <div class="school-info">
-                        <h3>Lone Star HS</h3>
-                        <p><strong>President:</strong> Aidan da Costa</p>
-                    </div>
+                <div class="join-chapters-cta">
+                    <h3>Want to See Your School Here?</h3>
+                    <p>Join our growing network of student-led chapters making a difference through music</p>
+                    <a href="./start" class="button-primary nav-link">Start a Chapter</a>
                 </div>
-                <div class="school-card">
-                    <img src="memorial.png" alt="Memorial HS Logo" class="school-logo">
-                    <div class="school-info">
-                        <h3>Memorial HS</h3>
-                        <p><strong>President:</strong> Brianna Rausch</p>
-                    </div>
-                </div>
-                <div class="school-card">
-                    <img src="reedy.png" alt="Reedy HS Logo" class="school-logo">
-                    <div class="school-info">
-                        <h3>Reedy HS</h3>
-                        <p><strong>President:</strong> Hayden Kim</p>
-                    </div>
-                </div>
-                <div class="school-card">
-                    <img src="pchs.png" alt="Panther Creek HS Logo" class="school-logo">
-                    <div class="school-info">
-                        <h3>Panther Creek HS</h3>
-                        <p><strong>President:</strong> Carlos Castro</p>
-                    </div>
-                </div>
-                <div class="school-card">
-                    <img src="frisco.png" alt="Frisco HS Logo" class="school-logo">
-                    <div class="school-info">
-                        <h3>Frisco HS</h3>
-                        <p><strong>President:</strong> Enze Wang</p>
-                    </div>
-                </div>
-                <div class="school-card">
-                    <img src="salado.png" alt="Salado HS Logo" class="school-logo">
-                    <div class="school-info">
-                        <h3>Salado HS</h3>
-                        <p><strong>President:</strong> Valente Hernandez</p>
-                    </div>
-                </div>
-                <div class="school-card">
-                    <img src="westlake.png" alt="Westlake HS Logo" class="school-logo">
-                    <div class="school-info">
-                        <h3>Westlake HS</h3>
-                        <p><strong>President:</strong> Vidhur Seshadri</p>
-                    </div>
-                </div>
-
             </section>
         </main>
     </div>
     <footer>
-        <p>Melodies for Humanity</p>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Melodies for Humanity Logo" class="footer-logo">
+                    <h3>Melodies for Humanity</h3>
+                    <p class="footer-tagline">Bringing the healing power of music to those who need it most</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="./" class="nav-link">Home</a></li>
+                            <li><a href="./founder" class="nav-link">Our Founder</a></li>
+                            <li><a href="./schools" class="nav-link">Chapters</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Get Involved</h4>
+                        <ul>
+                            <li><a href="./start" class="nav-link">Start a Chapter</a></li>
+                            <li><a href="./start" class="nav-link">Become a Member</a></li>
+                            <li><a href="./contact" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="mailto:info@melodiesforhumanity.org">info@melodiesforhumanity.org</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Melodies for Humanity</p>
+                <p class="footer-mission">A student-led nonprofit organization</p>
+            </div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>

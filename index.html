@@ -8,39 +8,222 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-top">
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
-                <span id="theme-icon">🌙</span>
-            </button>
+    <header id="main-header">
+        <div class="header-container">
+            <div class="header-left">
+                <img src="logo.png" alt="Melodies for Humanity Logo" class="logo-desktop">
+                <h1>Melodies for Humanity</h1>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <ul>
+                    <li><a href="./" class="nav-link">Home</a></li>
+                    <li><a href="./start" class="nav-link">Start a Chapter</a></li>
+                    <li><a href="./founder" class="nav-link">Founder</a></li>
+                    <li><a href="./schools" class="nav-link">Schools</a></li>
+                    <li><a href="./contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <span id="theme-icon">🌙</span>
+                </button>
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+            </div>
         </div>
-        <img src="logo.png" alt="Melodies for Humanity Logo" class="logo">
-        <h1>Melodies for Humanity</h1>
-        <nav>
-            <ul>
-                <li><a href="./" class="nav-link">Home</a></li>
-                <li><a href="./start" class="nav-link">Start a Chapter</a></li>
-                <li><a href="./founder" class="nav-link">Founder</a></li>
-                <li><a href="./schools" class="nav-link">Participating Schools</a></li>
-                <li><a href="./contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-content">
+            <div class="mobile-menu-header">
+                <h2>Menu</h2>
+                <button id="mobile-menu-close" class="mobile-menu-close" aria-label="Close menu">
+                    <span class="close-icon">×</span>
+                </button>
+            </div>
+            <nav class="mobile-menu-nav">
+                <ul>
+                    <li><a href="./" class="nav-link mobile-nav-link">Home</a></li>
+                    <li><a href="./start" class="nav-link mobile-nav-link">Start a Chapter</a></li>
+                    <li><a href="./founder" class="nav-link mobile-nav-link">Founder</a></li>
+                    <li><a href="./schools" class="nav-link mobile-nav-link">Schools</a></li>
+                    <li><a href="./contact" class="nav-link mobile-nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
     <div id="content">
         <main>
-            <section class="intro">
-                <h2>Our Mission</h2>
-                <p>Welcome to Melodies for Humanity, an organization dedicated to bringing the transformative power of music to those who need it most. Our mission is to spread joy and provide comfort through musical performances by high school students. We believe that music has the ability to uplift spirits, heal hearts, and create lasting memories. At Melodies for Humanity, we connect high school students who are passionate about music with opportunities to perform for individuals in senior centers, hospitals, and other care facilities. Our performers come from various musical backgrounds, including band, orchestra, and choir, and they bring their unique talents to brighten the days of those they perform for.</p>
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-content">
+                    <h2 class="hero-headline">Where Every Note Heals</h2>
+                    <p class="hero-subheadline">High school musicians bringing joy, comfort, and connection to seniors and patients across the country</p>
+
+                    <div class="hero-stats-balanced">
+                        <div class="stat-item">
+                            <div class="stat-text-medium">Across the U.S.</div>
+                            <div class="stat-label-medium">Expanding Nationwide</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-number-medium" id="chapter-count">7</div>
+                            <div class="stat-label-medium">Active Chapters</div>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <div class="stat-text-medium">Serving Communities</div>
+                            <div class="stat-label-medium">Through Music</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-cta">
+                        <a href="./start" class="button-primary nav-link">Start a Chapter at Your School</a>
+                        <a href="./schools" class="button-secondary nav-link">See Our Impact</a>
+                    </div>
+                </div>
             </section>
-            <section class="cta">
-                <h2>Join Us</h2>
-                <p>Interested in starting a chapter at your school? Click below to learn more!</p>
-                <a href="./start" class="button nav-link">Start a Chapter</a>
+
+            <!-- Mission Impact Section -->
+            <section class="impact-section">
+                <h2 class="section-title">The Power of Music</h2>
+                <p class="section-subtitle">Music has the unique ability to transcend barriers, heal hearts, and create lasting connections</p>
+
+                <div class="impact-grid">
+                    <div class="impact-card">
+                        <div class="impact-icon">🎵</div>
+                        <h3>For Performers</h3>
+                        <p>Develop leadership, empathy, and purpose while using your musical talents to make a real difference in your community.</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">❤️</div>
+                        <h3>For Recipients</h3>
+                        <p>Combat isolation and loneliness with the healing power of live music, bringing joy and comfort to those who need it most.</p>
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-icon">🤝</div>
+                        <h3>For Communities</h3>
+                        <p>Bridge generations through shared humanity, creating meaningful connections that strengthen our social fabric.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- How It Works Section -->
+            <section class="how-it-works">
+                <h2 class="section-title">Start Making a Difference in Three Simple Steps</h2>
+                <p class="section-subtitle">We'll guide you through everything you need to bring Melodies for Humanity to your school</p>
+
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Apply to Lead</h3>
+                        <p>Submit a simple application. We'll review it within one week and connect you with everything you need to get started.</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Launch Your Chapter</h3>
+                        <p>We provide resources, training, and ongoing support to help you recruit members and organize your first performances.</p>
+                    </div>
+                    <div class="step-connector"></div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Perform & Inspire</h3>
+                        <p>Coordinate performances at local senior centers and hospitals, bringing joy through music while developing lifelong skills.</p>
+                    </div>
+                </div>
+
+                <div class="cta-centered">
+                    <a href="./start" class="button-primary nav-link">Start Your Chapter Today</a>
+                </div>
+            </section>
+
+            <!-- Testimonials Section -->
+            <section class="testimonials">
+                <h2 class="section-title">Voices from Our Community</h2>
+                <p class="section-subtitle">Hear from the students and communities transformed by the power of music</p>
+
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"Performing for seniors showed me music's true power. Seeing their faces light up reminds me why I fell in love with music in the first place."</div>
+                        <div class="testimonial-author">
+                            <div class="author-name">Aidan da Costa</div>
+                            <div class="author-role">Founder & Lone Star HS Chapter President</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"Being part of this organization has shown me that my musical talents can bring real comfort to others. It's incredibly fulfilling to see the impact we make."</div>
+                        <div class="testimonial-author">
+                            <div class="author-name">Chapter Member</div>
+                            <div class="author-role">Student Musician</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"Music brings our residents a sense of connection and happiness that's truly irreplaceable. These young musicians are making such a profound difference."</div>
+                        <div class="testimonial-author">
+                            <div class="author-name">Community Partners</div>
+                            <div class="author-role">Senior Centers & Healthcare Facilities</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Final CTA Section -->
+            <section class="final-cta">
+                <h2>Join a Movement That's Changing Lives</h2>
+                <p>Be part of something bigger. Start a chapter, become a member, or simply spread the word about our mission.</p>
+                <div class="cta-buttons">
+                    <a href="./start" class="button-primary nav-link">Get Started</a>
+                    <a href="./contact" class="button-secondary nav-link">Get in Touch</a>
+                </div>
             </section>
         </main>
     </div>
     <footer>
-        <p>Melodies for Humanity</p>
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Melodies for Humanity Logo" class="footer-logo">
+                    <h3>Melodies for Humanity</h3>
+                    <p class="footer-tagline">Bringing the healing power of music to those who need it most</p>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <ul>
+                            <li><a href="./" class="nav-link">Home</a></li>
+                            <li><a href="./founder" class="nav-link">Our Founder</a></li>
+                            <li><a href="./schools" class="nav-link">Chapters</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Get Involved</h4>
+                        <ul>
+                            <li><a href="./start" class="nav-link">Start a Chapter</a></li>
+                            <li><a href="./start" class="nav-link">Become a Member</a></li>
+                            <li><a href="./contact" class="nav-link">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="mailto:info@melodiesforhumanity.org">info@melodiesforhumanity.org</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>Melodies for Humanity</p>
+                <p class="footer-mission">A student-led nonprofit organization</p>
+            </div>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
