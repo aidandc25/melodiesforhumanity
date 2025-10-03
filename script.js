@@ -5,14 +5,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const themeToggle = document.getElementById("theme-toggle");
     const themeIcon = document.getElementById("theme-icon");
 
-    // Check for saved theme preference or default to dark mode
+    // Check for saved theme preference or default to light mode
     const savedTheme = localStorage.getItem("theme");
-    if (savedTheme === "light") {
+    if (savedTheme === "dark") {
+        document.body.classList.remove("light-mode");
+        if (themeIcon) themeIcon.textContent = "🌙";
+    } else {
+        // Default to light mode
         document.body.classList.add("light-mode");
         if (themeIcon) themeIcon.textContent = "☀️";
-    } else {
-        // Default to dark mode
-        if (themeIcon) themeIcon.textContent = "🌙";
     }
 
     if (themeToggle) {

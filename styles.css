@@ -1272,6 +1272,223 @@ main {
 }
 
 /* ===================================
+   PARTNERS PAGE
+   =================================== */
+
+.partners-hero {
+    text-align: center;
+    padding: var(--space-16) 0 var(--space-12) 0;
+}
+
+.partners-impact {
+    padding: var(--space-12) 0 var(--space-20) 0;
+}
+
+/* Partner Benefits Grid */
+.partner-benefits {
+    padding: var(--space-20) 0;
+    background: var(--bg-secondary);
+    border-radius: var(--radius-2xl);
+    margin: var(--space-20) 0;
+    padding: var(--space-16);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    margin-top: var(--space-12);
+}
+
+.benefit-card {
+    background: var(--bg-card);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-primary);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 0;
+    background: var(--gradient-primary);
+    transition: height var(--transition-base);
+}
+
+.benefit-card:hover::before {
+    height: 100%;
+}
+
+.benefit-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+}
+
+.benefit-number {
+    font-size: var(--text-sm);
+    font-weight: 800;
+    color: var(--accent-primary);
+    margin-bottom: var(--space-3);
+    letter-spacing: 0.1em;
+}
+
+.benefit-card h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.benefit-card p {
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Become a Partner Section */
+.become-partner {
+    padding: var(--space-20) 0;
+}
+
+.become-partner-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+    background: var(--bg-card);
+    padding: var(--space-12);
+    border-radius: var(--radius-2xl);
+    border: 1px solid var(--border-primary);
+    box-shadow: var(--shadow-md);
+}
+
+@media (min-width: 768px) {
+    .become-partner-content {
+        grid-template-columns: 1.2fr 1fr;
+    }
+}
+
+.become-partner-text h2 {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.become-partner-text > p {
+    font-size: var(--text-lg);
+    line-height: var(--leading-relaxed);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+.partner-requirements {
+    background: var(--bg-tertiary);
+    padding: var(--space-6);
+    border-radius: var(--radius-xl);
+    margin-bottom: var(--space-8);
+    border: 1px solid var(--border-primary);
+}
+
+.partner-requirements h3 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+    color: var(--text-primary);
+}
+
+.partner-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.partner-checklist li {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    padding-left: var(--space-8);
+    position: relative;
+    line-height: var(--leading-relaxed);
+}
+
+.partner-checklist li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-success);
+    font-weight: 700;
+    font-size: var(--text-lg);
+}
+
+.partner-cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.become-partner-visual {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+    justify-content: center;
+}
+
+.partner-stat-card {
+    background: var(--gradient-hero);
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-primary);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.partner-stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+}
+
+.partner-stat-icon {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-3);
+    filter: grayscale(0.2);
+}
+
+.partner-stat-number {
+    font-size: var(--text-5xl);
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: var(--leading-tight);
+    margin-bottom: var(--space-2);
+}
+
+.partner-stat-label {
+    font-size: var(--text-sm);
+    color: var(--text-secondary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.partner-testimonials {
+    padding: var(--space-20) 0;
+}
+
+/* ===================================
    CONTACT & START PAGES
    =================================== */
 
@@ -1306,16 +1523,109 @@ main {
     margin-bottom: var(--space-4);
 }
 
-.contact a {
+.contact > p {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+/* Contact Methods Grid */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+    margin: var(--space-12) 0;
+}
+
+.contact-card {
+    background: var(--bg-tertiary);
+    padding: var(--space-10);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border-primary);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-primary);
+    background: var(--bg-elevated);
+}
+
+.contact-icon {
+    font-size: var(--text-6xl);
+    margin-bottom: var(--space-4);
+    filter: grayscale(0.2);
+    transition: all var(--transition-base);
+}
+
+.contact-card:hover .contact-icon {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.contact-card h3 {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.contact-card p {
+    font-size: var(--text-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-6);
+    line-height: var(--leading-relaxed);
+}
+
+.contact-link {
+    display: inline-block;
     color: var(--accent-primary);
     text-decoration: none;
     font-weight: 600;
-    transition: color var(--transition-fast);
+    font-size: var(--text-lg);
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    transition: all var(--transition-fast);
 }
 
-.contact a:hover {
-    color: var(--accent-secondary);
-    text-decoration: underline;
+.contact-link:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Contact CTA Section */
+.contact-cta {
+    background: var(--gradient-hero);
+    padding: var(--space-12);
+    border-radius: var(--radius-xl);
+    text-align: center;
+    margin-top: var(--space-12);
+    border: 1px solid var(--border-primary);
+}
+
+.contact-cta h3 {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--text-primary);
+}
+
+.contact-cta p {
+    font-size: var(--text-lg);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+.contact-cta .cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* Start Page Options */
