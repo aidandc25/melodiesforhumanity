@@ -87,9 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (href === './' || href === '/') {
             fetchUrl = './index.html';
         } else if (!href.endsWith('.html')) {
-            // Remove any leading ./ from href
-            let cleanHref = href.replace(/^\.\//, '');
-            fetchUrl = cleanHref.replace(/\/$/, '') + '.html';
+            fetchUrl = href.replace(/\/$/, '') + '.html';
         }
 
         fetch(fetchUrl)
@@ -128,7 +126,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Dynamic chapter counter
     function updateChapterCount() {
-        fetch('./pages/schools.html')
+        fetch('./schools.html')
             .then(response => response.text())
             .then(html => {
                 const parser = new DOMParser();
